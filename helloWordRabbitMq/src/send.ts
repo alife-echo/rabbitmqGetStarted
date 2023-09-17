@@ -15,10 +15,10 @@ async function enviarMensagem() {
     console.log(" [x] Sent %s", msg);
 
     await channel.close();
-    await connection.close();
 
-    setTimeout(function() {
-      connection.close();
+
+    setTimeout(async function() {
+    await  connection.close();
       process.exit(0);
     }, 500);
   } catch (error) {
