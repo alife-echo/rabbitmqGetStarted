@@ -14,7 +14,7 @@ async function worker() {
             let secs  = msg.content.toString().split('.').length - 1
             console.log(" [x] Recebido %s",msg.content.toString())
             console.log(secs)
-            setTimeout(function(){
+            setTimeout(()=>{
                 console.log(" [x] Concluido")
                 channel.ack(msg) //quando noAck é false o consumidor precisa confirmar cada mensagem recebida
             }, secs * 1000)
